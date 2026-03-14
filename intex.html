@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JEE by Susu | EdTech Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',sans-serif;background:#f1f5f9;color:#0f172a}
+
+header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:white;padding:45px 20px;text-align:center}
+.logo{font-size:42px;font-weight:700}
+.tag{margin-top:8px;opacity:.9}
+
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;background:white;padding:14px;box-shadow:0 3px 10px rgba(0,0,0,0.08);position:sticky;top:0;z-index:10}
+nav a{text-decoration:none;font-weight:600;color:#1e293b}
+
+.hero{text-align:center;padding:60px 20px;background:#e0e7ff}
+.hero h1{margin:0;font-size:38px}
+.hero p{max-width:720px;margin:16px auto}
+
+.container{max-width:1200px;margin:auto;padding:30px 20px}
+.section{margin-top:60px}
+
+.card{background:white;border-radius:14px;padding:24px;box-shadow:0 5px 16px rgba(0,0,0,0.08)}
+
+input,textarea,select{width:100%;padding:12px;border-radius:10px;border:1px solid #cbd5e1;font-size:16px;font-family:Poppins}
+
+button{margin-top:12px;background:#2563eb;color:white;border:none;padding:12px 18px;border-radius:10px;font-size:16px;cursor:pointer}
+button:hover{background:#1d4ed8}
+
+.answer{margin-top:18px;padding:15px;background:#e0e7ff;border-radius:10px;display:none}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+
+.question{background:#fff;border-radius:10px;padding:14px;margin-top:10px;box-shadow:0 3px 8px rgba(0,0,0,0.08)}
+
+.mock-box{background:white;border-radius:12px;padding:20px;text-align:center}
+
+.option{margin-top:10px;padding:10px;border:1px solid #cbd5e1;border-radius:8px;cursor:pointer}
+.option:hover{background:#e0e7ff}
+
+.timer{font-weight:600;margin-bottom:10px}
+
+.leaderboard-item{padding:10px;border-bottom:1px solid #e2e8f0}
+
+.adbox{background:#fef3c7;border:1px dashed #f59e0b;padding:18px;border-radius:10px;text-align:center;margin-top:20px}
+
+footer{margin-top:70px;background:#0f172a;color:white;text-align:center;padding:30px}
+
+</style></head><body><header>
+<div class="logo">🚀 JEE by Susu</div>
+<div class="tag">Complete EdTech Platform for JEE Aspirants</div>
+</header><nav>
+<a href="#ai">AI Doubt Solver</a>
+<a href="#pyq">JEE PYQs</a>
+<a href="#mock">Mock Test</a>
+<a href="#rank">Rank Predictor</a>
+<a href="#cutoff">NIT/IIT Cutoffs</a>
+<a href="#videos">Video Lectures</a>
+<a href="#leaderboard">Leaderboard</a>
+</nav><section class="hero">
+<h1>Prepare for JEE Smarter</h1>
+<p>AI doubts, PYQs, mock tests, college cutoffs, and video lectures — everything in one platform.</p>
+</section><div class="container"><!-- AI DOUBT SOLVER --><div class="section" id="ai">
+<div class="card">
+<h2>AI Doubt Solver</h2>
+<textarea id="question" placeholder="Ask any JEE doubt..."></textarea>
+<button onclick="solveDoubt()">Get Answer</button>
+<div class="answer" id="aiAnswer"></div>
+</div>
+</div><!-- PYQ --><div class="section" id="pyq">
+<h2>JEE Previous Year Questions</h2>
+<div class="card">
+<div class="question">Physics: What is centripetal force?</div>
+<div class="question">Chemistry: Which acid is strongest: HCl, HBr, HI?</div>
+<div class="question">Maths: If x²=16 then x=?</div>
+</div>
+</div><!-- MOCK TEST --><div class="section" id="mock">
+<h2>JEE Mock Test (CBT Style)</h2>
+<div class="mock-box">
+<div class="timer">Time Left: <span id="time">60</span>s</div>
+<p id="mockQ"></p>
+<div id="options"></div>
+<button onclick="nextQuestion()">Next</button>
+</div>
+</div><!-- RANK PREDICTOR --><div class="section" id="rank">
+<div class="card">
+<h2>JEE Rank Predictor</h2>
+<input id="marks" type="number" placeholder="Enter marks out of 300">
+<button onclick="predictRank()">Predict Rank</button>
+<div class="answer" id="rankResult"></div>
+</div>
+</div><!-- CUTOFF --><div class="section" id="cutoff">
+<div class="card">
+<h2>NIT / IIT Cutoff Guide</h2>
+<p>Top NIT CSE: Rank under 2000</p>
+<p>Mid NIT CSE: Rank under 8000</p>
+<p>New NIT CSE: Rank under 20000</p>
+<p>Top IIT CSE: Rank under 100</p>
+</div>
+</div><!-- VIDEOS --><div class="section" id="videos">
+<h2>Video Lectures</h2>
+<div class="grid">
+<div class="card"><h3>Physics</h3><iframe width="100%" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+<div class="card"><h3>Chemistry</h3><iframe width="100%" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+<div class="card"><h3>Maths</h3><iframe width="100%" height="200" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe></div>
+</div>
+</div><!-- LEADERBOARD --><div class="section" id="leaderboard">
+<div class="card">
+<h2>Mock Test Leaderboard</h2>
+<div class="leaderboard-item">1. Rahul - 280 Marks</div>
+<div class="leaderboard-item">2. Aman - 260 Marks</div>
+<div class="leaderboard-item">3. Priya - 240 Marks</div>
+</div>
+</div><!-- ADS --><div class="section">
+<div class="adbox">Google AdSense Ads will appear here (earning)</div>
+</div></div><footer>
+<p>© 2026 JEE by Susu | Built for JEE Aspirants</p>
+</footer><script>
+
+function solveDoubt(){
+let q=document.getElementById("question").value
+let a=document.getElementById("aiAnswer")
+a.style.display="block"
+
+if(q.trim()===""){
+a.innerHTML="Please enter your doubt.";
+return
+}
+
+a.innerHTML="Concept samjho, formula apply karo aur previous year questions practice karo. Real AI API future version me integrate ki ja sakti hai.";
+}
+
+function predictRank(){
+let m=document.getElementById("marks").value
+let r=document.getElementById("rankResult")
+r.style.display="block"
+
+if(m>=260) r.innerHTML="Expected Rank: Under 500"
+else if(m>=230) r.innerHTML="Expected Rank: 1000-3000"
+else if(m>=200) r.innerHTML="Expected Rank: 3000-7000"
+else if(m>=160) r.innerHTML="Expected Rank: 7000-15000"
+else r.innerHTML="Rank above 15000"
+}
+
+let questions=[
+{q:"Unit of force?",o:["Newton","Joule","Pascal","Watt"]},
+{q:"Atomic number of Oxygen?",o:["6","7","8","9"]},
+{q:"Derivative of x²?",o:["x","2x","x²","1"]}
+]
+
+let qi=0
+
+function showQuestion(){
+let q=questions[qi]
+document.getElementById("mockQ").innerText=q.q
+
+let opt=""
+q.o.forEach(o=>{opt+=`<div class='option'>${o}</div>`})
+
+document.getElementById("options").innerHTML=opt
+}
+
+function nextQuestion(){
+qi++
+if(qi>=questions.length) qi=0
+showQuestion()
+}
+
+showQuestion()
+
+let t=60
+setInterval(()=>{
+t--
+if(t<0)t=60
+
+document.getElementById("time").innerText=t
+},1000)
+
+</script></body>
+</html>
